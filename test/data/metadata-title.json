@@ -1,0 +1,115 @@
+{
+    "[HorribleSubs] Show By Rock!! S2 - 07 [720p].mkv": {
+        "group": "HorribleSubs",
+        "name": "Show By Rock!! S2",
+        "resolution": "720p",
+        "ep": 7,
+        "type": "ep",
+        "container": "mkv"
+    },
+    "Kabaneri of the Iron Fortress (1080p)": {
+        "resolution": "1080p",
+        "name": "Kabaneri of the Iron Fortress"
+    },
+    "[Project Marego] Chocolat no Mahou 1-2 Eng sub [480p]": {
+        "name": "Chocolat no Mahou",
+        "collection": [1,2],
+        "resolution": "480p",
+        "group": "Project Marego",
+        "comment": "details outside tags and random numbers which I don't even know the meaning of...",
+        "should_fail": true
+    },
+    "[project-gxs] Kara no Kyoukai - The Garden of Sinners v2 [10bit BD 1080p]": {
+        "group": "project-gxs",
+        "name": "Kara no Kyoukai - The Garden of Sinners",
+        "source": "bd",
+        "video-depth": "10bit",
+        "version": 2
+    },
+    "[Thunder] Hellsing Ultimate 06 - 10 [720p] [Dual Audio]": {
+        "group": "Thunder",
+        "collection": [6, 10],
+        "resolution": "720p",
+        "name": "Hellsing Ultimate",
+        "comment": "Titles like these are just unparsable, is this Hellsing Ultimate 06 EP 10? or a collection of Hellsing Ultimate EPs 06-10, this one is pretty obvious but since we don't have extra data about titles we just ignore it",
+        "should_fail": true
+    },
+    "[DeadFish] Psycho-Pass 2 - 11 [720p][AAC].mp4": {
+        "group": "DeadFish",
+        "ep": 11,
+        "name": "Psycho-Pass 2",
+        "resolution": "720p",
+        "audio": "aac",
+        "container": "mp4"
+    },
+    "[HorribleSubs] ReLIFE (01-13) [1080p] (Batch)": {
+        "group": "HorribleSubs",
+        "collection": [1, 13],
+        "type": "batch",
+        "resolution": "1080p",
+        "name": "ReLIFE"
+    },
+    "[FFF] DATE A LIVE [BD][1080p-FLAC]": {
+        "group": "FFF",
+        "source": "bd",
+        "resolution": "1080p",
+        "audio": "flac"
+    },
+    "[DeadFish] Ano Natsu de Matteru: Bokutachi wa Koukou Saigo no Natsu wo Sugoshinagara - Special [BD][1080p][AAC].mp4": {
+        "group": "DeadFish",
+        "source": "bd",
+        "resolution": "1080p",
+        "audio": "aac",
+        "container": "mp4",
+        "name": "Ano Natsu de Matteru: Bokutachi wa Koukou Saigo no Natsu wo Sugoshinagara",
+        "type": "special"
+    },
+    "[JacobSwaggedUp] Ore no Imouto ga Konna ni Kawaii Wake ga Nai [Season 1] (BD 1280x720)": {
+        "group": "JacobSwaggedUp",
+        "source": "bd",
+        "resolution": "1280x720",
+        "name": "Ore no Imouto ga Konna ni Kawaii Wake ga Nai",
+        "comment": "TODO: decide what to do with a tag like [Season 1]"
+    },
+    "[Coalgirls]_Evangelion_2.22_You_Can_(Not)_Advance_(1280x720_Blu-ray_FLAC)_[12DF18F3].mkv": {
+        "group": "Coalgirls",
+        "name": "Evangelion 2.22 You Can (Not) Advance",
+        "resolution": "1280x720",
+        "audio": "flac",
+        "source": "blu-ray",
+        "crc32": "12df18f3",
+        "container": "mkv",
+        "should_fail": true,
+        "comment": "This is very difficult to fix or I need to rewrite ALL the logic."
+    },
+    "[Cthune] Rolling Girls - 09 [720p H264 AAC][EBDE8F5B].mkv": {
+        "group": "Cthune",
+        "name": "Rolling Girls",
+        "ep": 9,
+        "resolution": "720p",
+        "video": "h264",
+        "audio": "aac",
+        "crc32": "ebde8f5b"
+    },
+    "[Coalgirls]_Nisekoi_01_(1920x1080_Blu-ray_FLAC)_[F68B03CD].mkv": {
+        "group": "Coalgirls",
+        "name": "Nisekoi",
+        "ep": 1,
+        "resolution": "1920x1080",
+        "source": "blu-ray",
+        "audio":"flac",
+        "crc32": "f68b03cd",
+        "container": "mkv"
+    },
+    "":{},
+    "[Chihiro-Amaterasu]_Rewrite_-_Vol.01_[Blu-ray_720p_Hi10P_FLAC]": {
+        "type": "volume",
+        "group": "Chihiro-Amaterasu",
+        "name": "Rewrite",
+        "volume": 1,
+        "source": "blu-ray",
+        "resolution": "720p",
+        "video-depth": "hi10p",
+        "audio": "flac"
+    }
+}
