@@ -1,4 +1,7 @@
 # 頭 (Atama)
+
+[![Build Status](https://travis-ci.org/odangomoe/Atama.svg?branch=master)](https://travis-ci.org/odangomoe/Atama) [![Coverage Status](https://coveralls.io/repos/github/odangomoe/Atama/badge.svg?branch=master)](https://coveralls.io/github/odangomoe/Atama?branch=master)
+
 Anime torrent title parsing and archiving
 
 This package it's only use is to parse anime torrent titles and archive them into TorrentSets
@@ -11,7 +14,7 @@ composer require odango/atama
 
 ## Metadata
 
-The actual parsing of titles done with black magic, battle tested on the whole nyaa site. of course there may be some cases where it fails to parse correctly, please create an issue for those. 
+The actual parsing of titles done with black magic, battle tested on the whole nyaa site. of course there may be some cases where it fails to parse correctly, please create an issue for those.
 
 ```php
 $md = Metadata::createFromTitle("[HorribleSubs] Show By Rock!! S2 - 07 [720p].mkv");
@@ -30,7 +33,7 @@ The `Metadata` object is an `ArrayObject` and doesn't define any functions excep
 Create an `Metadata` object from a title by parsing all the info from the title
 
 ### `Metadata::createFromArray($array): Metadata`
- 
+
 Create an `Metadata` object with the given array as properties
 
 ## Archiver
@@ -38,7 +41,7 @@ Create an `Metadata` object with the given array as properties
 Archives the torrents into the correct `TorrentSet`'s can be done stateless (by using `Archiver::archive`) or with state, by creating the `Archiver` object
 
 ### `Archiver::archive(Torrent[] $torrents): TorrentSet[]`
- 
+
 This function will archive given torrents in separate `TorrentSet`'s and return those, as you would expect it.
 
 All HorribleSubs, Show By Rock!! S2, 720p will be in it's own set, while the 1080p torrents of those will be in a different set.
@@ -67,7 +70,7 @@ Returns all the torrents in the `TorrentSet`
 
 ### `TorrentSet->getMetadata(): Metadata`
 
-Gets a `Metadata` object with the `Metadata` all torrents in the set have in common 
+Gets a `Metadata` object with the `Metadata` all torrents in the set have in common
 
 ## Torrent
 
