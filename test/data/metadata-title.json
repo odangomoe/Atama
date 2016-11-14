@@ -91,6 +91,26 @@
         "audio": "aac",
         "crc32": "ebde8f5b"
     },
+    "[Cthune] Rolling Girls - Batch 09-40 [720p H264 AAC][EBDE8F5B].mkv": {
+        "group": "Cthune",
+        "name": "Rolling Girls",
+        "collection": [9, 40],
+        "type": "batch",
+        "resolution": "720p",
+        "video": "h264",
+        "audio": "aac",
+        "crc32": "ebde8f5b"
+    },
+    "[Cthune] Rolling Girls - Season 4 [720p H264 AAC][EBDE8F5B].mkv": {
+        "group": "Cthune",
+        "name": "Rolling Girls",
+        "season": 4,
+        "type": "season",
+        "resolution": "720p",
+        "video": "h264",
+        "audio": "aac",
+        "crc32": "ebde8f5b"
+    },
     "[Coalgirls]_Nisekoi_01_(1920x1080_Blu-ray_FLAC)_[F68B03CD].mkv": {
         "group": "Coalgirls",
         "name": "Nisekoi",
@@ -101,7 +121,9 @@
         "crc32": "f68b03cd",
         "container": "mkv"
     },
-    "":{},
+    "":{
+        "comment": "Empty titles should just result in no data"
+    },
     "[Chihiro-Amaterasu]_Rewrite_-_Vol.01_[Blu-ray_720p_Hi10P_FLAC]": {
         "type": "volume",
         "group": "Chihiro-Amaterasu",
@@ -111,5 +133,13 @@
         "resolution": "720p",
         "video-depth": "hi10p",
         "audio": "flac"
+    },
+    "[hi10p] We Tha Team [480p]": {
+        "type": "unknown",
+        "group": "hi10p",
+        "name": "We Tha Team",
+        "resolution": "480p",
+        "video-depth": "hi10p",
+        "comment": "TODO: decide what to do with this BS (never seen it live, but it's a nice edge case)"
     }
 }

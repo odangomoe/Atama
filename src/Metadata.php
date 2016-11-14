@@ -20,7 +20,7 @@ class Metadata extends \ArrayObject
     // Matches group and spacer (' ' or '_')
     const GROUP_AND_SPACER_MATCHER = '~^(?:\[([^\]]+)\]|\(([^\)]+)\)|(.+) >> )([_ ])?~';
     // Matches the name of a title
-    const NAME_MATCHER = '~(?:\[([^\]]+)\]|\(([^\)]+)\)|(.+) >>)?((?:(?!\[[^\]+]\]| [-\~] (?:[0-9]|vol|batch|special|o[nv]a)|( (Vol\. ?)?[0-9]*(-[0-9]+)?(v[0-9]+)? ?)?(\(|\[|\.[a-z0-9]+$)).)+)~i';
+    const NAME_MATCHER = '~(?:\[([^\]]+)\]|\(([^\)]+)\)|(.+) >>)?((?:(?!\[[^\]+]\]| [-\~] (?:[0-9]|season|vol|batch|special|o[nv]a)|( (Vol\. ?)?[0-9]*(-[0-9]+)?(v[0-9]+)? ?)?(\(|\[|\.[a-z0-9]+$)).)+)~i';
     // Matches tags in the title e.g. [MP3] or (MP4)
     const TAG_MATCHER = '~(?:\[([^\]]+)\]|\(([^\)]+)\))~';
     // Matches the extension of a torrent e.g. .mkv or .mp4
@@ -38,7 +38,8 @@ class Metadata extends \ArrayObject
 
     static public function createFromTitle($title) {
         $md = static::createFromArray([
-           'unparsed' => []
+            'unparsed' => [],
+            'type' => 'unknown'
         ]);
 
         $normalizedTitle = $md->normalizeTitle($title);
@@ -103,11 +104,7 @@ class Metadata extends \ArrayObject
             return null;
         }
 
-        if (isset($match[4])) {
-            return trim($match[4]);
-        }
-
-        return null;
+        return trim($match[4] ?? "");
     }
 
     private function parseTagsFromTitle($title) {
@@ -241,13 +238,13 @@ class Metadata extends \ArrayObject
             // If volume
             $info['type'] = 'volume';
             $info['volume'] = intval($match[2]);
-        } else if (!empty($match[3]) && /* in case a series ends with a number and has BATCH in the tags */ !isset($this['type'])) {
+        } else if (!empty($match[3]) && /* in case a series ends with a number and has BATCH in the tags */ $this['type'] === 'unknown') {
             // If EP
             $info['type'] = 'ep';
             $info['ep'] = floatval($match[3]); // floatval for special ep numbering e.g. 10.5
         } else if (!empty($match[4])) {
             // If batch or special
-            if (substr(strtolower($match[4]), 0, 5) == 'batch') {
+            if (strtolower(substr($match[4], 0, 5)) == 'batch') {
                 $info['type'] = 'batch';
                 if (isset($match[5])) {
                     $info['collection'] = [intval($match[5]), intval($match[6])];
@@ -260,9 +257,9 @@ class Metadata extends \ArrayObject
             // If collection
             $info['type'] = 'collection';
             $info['collection'] = [intval($match[8]), intval($match[9])];
-        } else if (!empty($match[9])) {
+        } else if (!empty($match[10])) {
             $info['type'] = 'season';
-            $info['season'] = intval($match[11]);
+            $info['season'] = intval($match[12]);
         }
 
         if (!empty($match[13])) {

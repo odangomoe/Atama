@@ -6,9 +6,41 @@ namespace Odango\Atama;
 
 class Torrent
 {
-    public $id;
-    public $title;
-    public $metadata;
+    protected $id;
+    protected $title;
+    protected $metadata;
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param mixed $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
 
     /**
      * @return Metadata
@@ -16,7 +48,7 @@ class Torrent
     public function getMetadata(): Metadata
     {
         if ($this->metadata === null) {
-            $this->metadata = Metadata::createFromTitle($this->title);
+            $this->metadata = Metadata::createFromTitle($this->getTitle());
         }
 
         return $this->metadata;
@@ -38,7 +70,7 @@ class Torrent
             case 'special':
             case 'ova':
             case 'ona':
-                return $this->id;
+                return $this->getId() ?? rand(0, 9999);
             default:
                 return 0;
         }
@@ -51,7 +83,7 @@ class Torrent
     public function getSeriesHash(): string {
         $md = $this->getMetadata();
 
-        $parts = [$md['name'], $md['group'], $md['type'], $md['resolution']];
+        $parts = [$md['name'], $md['group'], $md['type'], $md['resolution'] ?? 'unknown'];
         return implode("/", $parts);
     }
 }

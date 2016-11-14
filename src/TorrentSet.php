@@ -9,12 +9,17 @@ class TorrentSet
     /**
      * @var Torrent[]
      */
-    private $torrentsMappedByHash;
+    private $torrentsMappedByHash = [];
 
     /**
      * @var Metadata
      */
     private $metadata;
+
+    /**
+     * @var bool
+     */
+    private $cleanMetadata = true;
 
     /**
      * @return Torrent[]
@@ -27,11 +32,7 @@ class TorrentSet
     public function getMetadata(): Metadata
     {
         if ($this->metadata === null) {
-            if (count($this->getTorrents()) > 0) {
-                $this->metadata = $this->getTorrents()[0]->getMetadata();
-            } else {
-                $this->metadata = new Metadata();
-            }
+            $this->metadata = new Metadata();
         }
 
         return $this->metadata;
@@ -40,18 +41,31 @@ class TorrentSet
     public function addTorrent(Torrent $torrent): bool {
         $hash = $torrent->getHash();
 
-        if (!isset($this->torrentsMappedByHash[$hash])) {
-            $this->torrentsMappedByHash[$hash] = $torrent;
-            return true;
-        }
-
-        $oldTorrent = $this->torrentsMappedByHash[$hash];
-
-        if (($torrent->getMetadata()['version'] ?? 0) < ($oldTorrent->getMetadata()['version'] ?? 0)) {
+        if (
+            isset($this->torrentsMappedByHash[$hash]) &&
+            ($torrent->getMetadata()['version'] ?? 0) <= ($this->torrentsMappedByHash[$hash]->getMetadata()['version'] ?? 0)
+        ) {
             return false;
         }
 
         $this->torrentsMappedByHash[$hash] = $torrent;
+        $this->updateMetadata($torrent->getMetadata());
         return true;
+    }
+
+    private function updateMetadata(Metadata $metadata) {
+        if ($this->cleanMetadata) {
+            $this->cleanMetadata = false;
+
+            $this->metadata = clone $metadata;
+            return;
+        }
+
+        foreach ($this->metadata as $key => $value) {
+            $newValue = $metadata[$key] ?? null;
+            if ($newValue !== $value) {
+                unset($this->metadata[$key]);
+            }
+        }
     }
 }
