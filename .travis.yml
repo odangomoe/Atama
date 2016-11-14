@@ -1,0 +1,13 @@
+language: php
+php:
+  - 7.0
+
+
+install:
+  - curl -s http://getcomposer.org/installer | php
+  - php composer.phar install --dev --no-interaction
+script:
+  - mkdir -p build/logs
+  - php vendor/bin/phpunit -c phpunit.xml
+after_success:
+  - travis_retry php vendor/bin/coveralls -v
