@@ -3,6 +3,12 @@ Anime torrent title parsing and archiving
 
 This package it's only use is to parse anime torrent titles and archive them into TorrentSets
 
+### Install
+
+```
+composer require odango/atama
+```
+
 ## Metadata
 
 The actual parsing of titles done with black magic, battle tested on the whole nyaa site. of course there may be some cases where it fails to parse correctly, please create an issue for those. 
