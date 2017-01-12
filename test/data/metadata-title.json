@@ -3,7 +3,7 @@
         "group": "HorribleSubs",
         "name": "Show By Rock!! S2",
         "resolution": "720p",
-        "ep": 7,
+        "ep": [7],
         "type": "ep",
         "container": "mkv"
     },
@@ -36,7 +36,7 @@
     },
     "[DeadFish] Psycho-Pass 2 - 11 [720p][AAC].mp4": {
         "group": "DeadFish",
-        "ep": 11,
+        "ep": [11],
         "name": "Psycho-Pass 2",
         "resolution": "720p",
         "audio": "aac",
@@ -85,7 +85,7 @@
     "[Cthune] Rolling Girls - 09 [720p H264 AAC][EBDE8F5B].mkv": {
         "group": "Cthune",
         "name": "Rolling Girls",
-        "ep": 9,
+        "ep": [9],
         "resolution": "720p",
         "video": "h264",
         "audio": "aac",
@@ -114,7 +114,7 @@
     "[Coalgirls]_Nisekoi_01_(1920x1080_Blu-ray_FLAC)_[F68B03CD].mkv": {
         "group": "Coalgirls",
         "name": "Nisekoi",
-        "ep": 1,
+        "ep": [1],
         "resolution": "1920x1080",
         "source": "blu-ray",
         "audio":"flac",
@@ -141,5 +141,17 @@
         "resolution": "480p",
         "video-depth": "hi10p",
         "comment": "TODO: decide what to do with this BS (never seen it live, but it's a nice edge case)"
+    },
+    "[m.3.3.w] Hanasakeru Seishounen 12.5 (XviD) [89BACFB9].avi": {
+        "type": "ep",
+        "ep": [12.5],
+        "group": "m.3.3.w",
+        "crc32": "89bacfb9"
+    },
+    "[HorribleSubs] Re Zero kara Hajimeru Isekai Seikatsu - 01A [1080p].mkv": {
+        "type": "ep",
+        "ep": [1, "A"],
+        "group": "HorribleSubs",
+        "resolution": "1080p"
     }
 }

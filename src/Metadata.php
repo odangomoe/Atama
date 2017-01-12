@@ -10,7 +10,7 @@ class Metadata extends \ArrayObject
         "resolution" => ['/^[0-9]+p$/i','/^[0-9]+x[0-9]+$/i', '720','1080','420'],
         "source" => ['/^dvd(-?rip)?$/i', '/^bd(?:-?rip)?$/i', '/^blu-?ray$/i'],
         "audio" => ['/^aac(-ac3)?$/i', 'mp3', '/^flac(-ac3)?$/i'],
-        "video" => ['x264', 'x265', 'avc', 'hevc', '/^h\.?264/i', '/^h\.?265/i'],
+        "video" => ['x264', 'x265', 'avc', 'hevc', '/^h\.?264/i', '/^h\.?265/i','xvid','divx'],
         "video-depth" => ['/^10b(it)?$/i', '/^8b(it)?$/i', 'hi10p'],
         "container" => ['mp4','mkv', 'avi'],
         "crc32" => ['/^[a-f0-9]{8}$/i'],
@@ -26,9 +26,11 @@ class Metadata extends \ArrayObject
     // Matches the extension of a torrent e.g. .mkv or .mp4
     const EXTENSION_MATCHER = '~\.([a-z0-9]+)$~i';
     // Matches info like which EP, batch or Volume this is
-    const TYPE_INFO_MATCHER = '~ (?:(Vol\.? ?([0-9]+) (?:End)?)|([0-9]+(?:\.[0-9]+)?)|(batch(?: (\d+)-(\d+))?|o[vn]a|special)|(([0-9]+)-([0-9]+))(?: complete)?|((s|season )([0-9]+)))?( ?v([0-9]+))? ?(\[|\()~i';
+    const TYPE_INFO_MATCHER = '~ (?:(Vol\.? ?([0-9]+) (?:End)?)|([0-9]+(?:\.[0-9]+|[A-Z]+)?)|(batch(?: (\d+)-(\d+))?|o[vn]a|special)|(([0-9]+)-([0-9]+))(?: complete)?|((s|season )([0-9]+)))?( ?v([0-9]+))? ?(\[|\()~i';
     // Matches a range for a collection e.g. 10 - 23
     const COLLECTION_RANGE_MATCHER = '~([0-9]+(?:\.[0-9]+)?) ?- ?([0-9]+(?:\.[0-9]+)?)~';
+    // Matches the EP with part
+    const EP_MATCHER = '~^([0-9]+(?:\.[0-9]+)?)([a-z]+)?$~i';
 
     static public function createFromArray($metadata) {
         $md = new static();
@@ -227,6 +229,22 @@ class Metadata extends \ArrayObject
         return null;
     }
 
+    private function parseEpInfo($ep) {
+        if (!preg_match(static::EP_MATCHER, $ep, $match)) {
+            // @codeCoverageIgnoreStart
+            return [floatval($ep)];
+            // @codeCoverageIgnoreEnd
+        }
+
+        $epParts = [floatval($match[1])];
+
+        if (!empty($match[2])) {
+            $epParts[] = $match[2];
+        }
+
+        return $epParts;
+    }
+
     private function parseTypeInfoFromTitle($title) {
         $info = [];
 
@@ -241,7 +259,8 @@ class Metadata extends \ArrayObject
         } else if (!empty($match[3]) && /* in case a series ends with a number and has BATCH in the tags */ $this['type'] === 'unknown') {
             // If EP
             $info['type'] = 'ep';
-            $info['ep'] = floatval($match[3]); // floatval for special ep numbering e.g. 10.5
+
+            $info['ep'] = $this->parseEpInfo($match[3]);
         } else if (!empty($match[4])) {
             // If batch or special
             if (strtolower(substr($match[4], 0, 5)) == 'batch') {

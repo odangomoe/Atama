@@ -66,7 +66,7 @@ class Torrent
             case 'collection':
                 return implode('-', $this->getMetadata()['collection']);
             case 'ep':
-                return $this->getMetadata()['ep'];
+                return implode(',', $this->getMetadata()['ep']);
             case 'special':
             case 'ova':
             case 'ona':

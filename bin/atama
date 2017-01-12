@@ -1,0 +1,29 @@
+#!/usr/bin/env php
+<?php
+
+$foundAutoload = false;
+foreach ([__DIR__ . '/../vendor/autoload.php', __DIR__ . '/../../../autoload.php'] as $path) {
+    if (file_exists($path)) {
+        $foundAutoload = true;
+        include($path);
+    }
+}
+
+if (!$foundAutoload) {
+    echo "Can't find autoloader :(\n";
+}
+
+$md = \Odango\Atama\Metadata::createFromTitle($argv[1]);
+
+foreach ($md as $key => $value) {
+    if (empty($value)) continue;
+    echo "{$key}=";
+
+    if (is_array($value)) {
+        echo implode(",", $value);
+    } else {
+        echo $value;
+    }
+
+    echo "\n";
+}

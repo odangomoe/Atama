@@ -21,5 +21,6 @@
             "Odango\\Atama\\": "src/",
             "Odango\\Atama\\Test\\": "test/"
         }
-    }
+    },
+    "bin": ["bin/atama"]
 }
