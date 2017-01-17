@@ -150,8 +150,15 @@
     },
     "[HorribleSubs] Re Zero kara Hajimeru Isekai Seikatsu - 01A [1080p].mkv": {
         "type": "ep",
+        "name": "Re Zero kara Hajimeru Isekai Seikatsu",
         "ep": [1, "A"],
         "group": "HorribleSubs",
         "resolution": "1080p"
+    },
+    "[NyaaTorrents] LOVE HINA VOL 5 [DVD-ISO]": {
+        "type": "volume",
+        "name": "LOVE HINA",
+        "volume": 5,
+        "source": "dvd-iso"
     }
 }
