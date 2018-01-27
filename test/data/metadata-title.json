@@ -160,5 +160,30 @@
         "name": "LOVE HINA",
         "volume": 5,
         "source": "dvd-iso"
+    },
+    "[Jumonji-Giri]_[F-B&A-E]_W_Wish_Ep01_(0c29b4a5).mkv": {
+        "type": "ep",
+        "ep": [1],
+        "name": "W Wish",
+        "crc32": "0c29b4a5",
+        "container": "mkv"
+    },
+    "[BakedFish] Hagane Orchestra - 01 - 12 - Batch [720p][MP4][AAC]": {
+        "type": "batch",
+        "collection": [1, 12],
+        "resolution": "720p",
+        "container": "mp4",
+        "audio": "aac",
+        "name": "Hagane Orchestra",
+        "group": "BakedFish",
+        "should_fail": true,
+        "comment": "TODO"
+    },
+    "[Coalgirls]_Katanagatari_(1280x720_Blu-Ray_FLAC)": {
+        "type": "batch",
+        "resolution": "1280x720",
+        "audio": "flac",
+        "group": "Coalgirls",
+        "name": "Katanagatari"
     }
 }

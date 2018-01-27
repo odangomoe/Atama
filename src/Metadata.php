@@ -20,13 +20,13 @@ class Metadata extends \ArrayObject
     // Matches group and spacer (' ' or '_')
     const GROUP_AND_SPACER_MATCHER = '~^(?:\[([^\]]+)\]|\(([^\)]+)\)|(.+) >> )([_ ])?~';
     // Matches the name of a title
-    const NAME_MATCHER = '~(?:\[([^\]]+)\]|\(([^\)]+)\)|(.+) >>)?((?:(?!\[[^\]+]\]| [-\~] (?:[0-9]|season|vol|batch|special|o[nv]a)|( (Vol\.? ?)?[0-9]*(-[0-9]+)?(v[0-9]+)? ?)?(\(|\[|\.[a-z0-9]+$)).)+)~i';
+    const NAME_MATCHER = '~(?:(?:\[([^\]]+)\]|\(([^\)]+)\))(?:(?:[_ ]\[(?:[^\]]+)\]|\((?:[^\)]+)\)))*|(.+) >>)?((?:(?!\[[^\]+]\]|Ep[0-9]| [-\~] (?:[0-9]|season|vol|batch|special|o[nv]a)|( (Vol\.? ?)?[0-9]*(-[0-9]+)?(v[0-9]+)? ?)?(\(|\[|\.[a-z0-9]+$)).)+)~i';
     // Matches tags in the title e.g. [MP3] or (MP4)
     const TAG_MATCHER = '~(?:\[([^\]]+)\]|\(([^\)]+)\))~';
     // Matches the extension of a torrent e.g. .mkv or .mp4
     const EXTENSION_MATCHER = '~\.([a-z0-9]+)$~i';
     // Matches info like which EP, batch or Volume this is
-    const TYPE_INFO_MATCHER = '~ (?:(Vol\.? ?([0-9]+) (?:End)?)|([0-9]+(?:\.[0-9]+|[A-Z]+)?)|(batch(?: (\d+)-(\d+))?|o[vn]a|special)|(([0-9]+)-([0-9]+))(?: complete)?|((s|season )([0-9]+)))?( ?v([0-9]+))? ?(\[|\()~i';
+    const TYPE_INFO_MATCHER = '~(?: (?:(Vol\.? ?([0-9]+) (?:End)?)|(?:ep)?([0-9]+(?:\.[0-9]+|[A-Z]+)?)|(batch(?: (\d+)-(\d+))?|o[vn]a|special)|(([0-9]+)-([0-9]+))(?: complete)?|((s|season )([0-9]+)))|( ?v([0-9]+)))+ ?(?:\[|\()~i';
     // Matches a range for a collection e.g. 10 - 23
     const COLLECTION_RANGE_MATCHER = '~([0-9]+(?:\.[0-9]+)?) ?- ?([0-9]+(?:\.[0-9]+)?)~';
     // Matches the EP with part
@@ -50,6 +50,12 @@ class Metadata extends \ArrayObject
         $md->mergeIntoSelf($md->parseTagsFromTitle($normalizedTitle));
         $md->mergeIntoSelf($md->parseTypeInfoFromTitle($normalizedTitle));
         $md['container'] = $md->parseContainerFromTitle($normalizedTitle);
+
+        // Mostly when there is a source and we don't know the type
+        // It's a batch from that source
+        if (isset($md['source']) && $md['type'] === 'unknown') {
+            $md['type'] = 'batch';
+        }
 
         $md->removeGroupFromUnparsed();
 
