@@ -26,7 +26,7 @@ class Metadata extends \ArrayObject
     // Matches the extension of a torrent e.g. .mkv or .mp4
     const EXTENSION_MATCHER = '~\.([a-z0-9]+)$~i';
     // Matches info like which EP, batch or Volume this is
-    const TYPE_INFO_MATCHER = '~(?: (?:(Vol\.? ?([0-9]+) (?:End)?)|(?:ep)?([0-9]+(?:\.[0-9]+|[A-Z]+)?)|(batch(?: (\d+)-(\d+))?|o[vn]a|special)|(([0-9]+)-([0-9]+))(?: complete)?|((s|season )([0-9]+)))|( ?v([0-9]+)))+ ?(?:\[|\()~i';
+    const TYPE_INFO_MATCHER = '~(?: (?:(Vol\.? ?([0-9]+) (?:End)?)|(?:ep)?([0-9]+(?:\.[0-9]+|[A-Z]+)?)|(batch(?: (\d+)-(\d+))?|o[vn]a|special)|(([0-9]+)-([0-9]+))(?: complete)?|((s|season )([0-9]+)))|( ?v([0-9]+)))+ ?(?:END ?)?(?:\[|\()~i';
     // Matches a range for a collection e.g. 10 - 23
     const COLLECTION_RANGE_MATCHER = '~([0-9]+(?:\.[0-9]+)?) ?- ?([0-9]+(?:\.[0-9]+)?)~';
     // Matches the EP with part

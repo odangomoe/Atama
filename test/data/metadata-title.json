@@ -185,5 +185,13 @@
         "audio": "flac",
         "group": "Coalgirls",
         "name": "Katanagatari"
+    },
+    "[Erai-raws] Tsurezure Children - 12 END [1080p][Multiple Subtitle][892E3258].mkv": {
+        "type": "ep",
+        "resolution": "1080p",
+        "unparsed": ["Multiple Subtitle"],
+        "group": "Erai-raws",
+        "name": "Tsurezure Children",
+        "ep": [12]
     }
 }
