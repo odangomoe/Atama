@@ -5,8 +5,9 @@ namespace Odango\Atama\Test;
 
 use Odango\Atama\Archiver;
 use Odango\Atama\Torrent;
+use PHPUnit\Framework\TestCase;
 
-class ArchiverTest extends \PHPUnit_Framework_TestCase
+class ArchiverTest extends TestCase
 {
     /**
      * @param string[] $names

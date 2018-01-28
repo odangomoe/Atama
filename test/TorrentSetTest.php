@@ -6,8 +6,9 @@ namespace Odango\Atama\Test;
 
 use Odango\Atama\Torrent;
 use Odango\Atama\TorrentSet;
+use PHPUnit\Framework\TestCase;
 
-class TorrentSetTest extends \PHPUnit_Framework_TestCase
+class TorrentSetTest extends TestCase
 {
 
     public function testEmptySetMetadataRetrieval()

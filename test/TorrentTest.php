@@ -5,8 +5,9 @@ namespace Odango\Atama\Test;
 
 
 use Odango\Atama\Torrent;
+use PHPUnit\Framework\TestCase;
 
-class TorrentTest extends \PHPUnit_Framework_TestCase
+class TorrentTest extends TestCase
 {
     // PURE FOR THAT 100% CODE COVERAGE
     public function testIdSetting()

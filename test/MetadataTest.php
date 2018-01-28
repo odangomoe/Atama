@@ -5,8 +5,9 @@ namespace Odango\Atama\Test;
 
 
 use Odango\Atama\Metadata;
+use PHPUnit\Framework\TestCase;
 
-class MetadataTest extends \PHPUnit_Framework_TestCase
+class MetadataTest extends TestCase
 {
 
     /**
@@ -57,7 +58,6 @@ class MetadataTest extends \PHPUnit_Framework_TestCase
     public function metadataTitleProvider()
     {
         $data =  json_decode(file_get_contents(__DIR__ . '/data/metadata-title.json'), true);
-
         $set = [];
 
         foreach ($data as $title => $metadata) {
