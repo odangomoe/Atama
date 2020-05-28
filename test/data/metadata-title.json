@@ -1,197 +1,208 @@
 {
-    "[HorribleSubs] Show By Rock!! S2 - 07 [720p].mkv": {
-        "group": "HorribleSubs",
-        "name": "Show By Rock!! S2",
-        "resolution": "720p",
-        "ep": [7],
-        "type": "ep",
-        "container": "mkv"
-    },
-    "Kabaneri of the Iron Fortress (1080p)": {
-        "resolution": "1080p",
-        "name": "Kabaneri of the Iron Fortress"
-    },
-    "[Project Marego] Chocolat no Mahou 1-2 Eng sub [480p]": {
-        "name": "Chocolat no Mahou",
-        "collection": [1,2],
-        "resolution": "480p",
-        "group": "Project Marego",
-        "comment": "details outside tags and random numbers which I don't even know the meaning of...",
-        "should_fail": true
-    },
-    "[project-gxs] Kara no Kyoukai - The Garden of Sinners v2 [10bit BD 1080p]": {
-        "group": "project-gxs",
-        "name": "Kara no Kyoukai - The Garden of Sinners",
-        "source": "bd",
-        "video-depth": "10bit",
-        "version": 2
-    },
-    "[Thunder] Hellsing Ultimate 06 - 10 [720p] [Dual Audio]": {
-        "group": "Thunder",
-        "collection": [6, 10],
-        "resolution": "720p",
-        "name": "Hellsing Ultimate",
-        "comment": "Titles like these are just unparsable, is this Hellsing Ultimate 06 EP 10? or a collection of Hellsing Ultimate EPs 06-10, this one is pretty obvious but since we don't have extra data about titles we just ignore it",
-        "should_fail": true
-    },
-    "[DeadFish] Psycho-Pass 2 - 11 [720p][AAC].mp4": {
-        "group": "DeadFish",
-        "ep": [11],
-        "name": "Psycho-Pass 2",
-        "resolution": "720p",
-        "audio": "aac",
-        "container": "mp4"
-    },
-    "[HorribleSubs] ReLIFE (01-13) [1080p] (Batch)": {
-        "group": "HorribleSubs",
-        "collection": [1, 13],
-        "type": "batch",
-        "resolution": "1080p",
-        "name": "ReLIFE"
-    },
-    "[FFF] DATE A LIVE [BD][1080p-FLAC]": {
-        "group": "FFF",
-        "source": "bd",
-        "resolution": "1080p",
-        "audio": "flac"
-    },
-    "[DeadFish] Ano Natsu de Matteru: Bokutachi wa Koukou Saigo no Natsu wo Sugoshinagara - Special [BD][1080p][AAC].mp4": {
-        "group": "DeadFish",
-        "source": "bd",
-        "resolution": "1080p",
-        "audio": "aac",
-        "container": "mp4",
-        "name": "Ano Natsu de Matteru: Bokutachi wa Koukou Saigo no Natsu wo Sugoshinagara",
-        "type": "special"
-    },
-    "[JacobSwaggedUp] Ore no Imouto ga Konna ni Kawaii Wake ga Nai [Season 1] (BD 1280x720)": {
-        "group": "JacobSwaggedUp",
-        "source": "bd",
-        "resolution": "1280x720",
-        "name": "Ore no Imouto ga Konna ni Kawaii Wake ga Nai",
-        "comment": "TODO: decide what to do with a tag like [Season 1]"
-    },
-    "[Coalgirls]_Evangelion_2.22_You_Can_(Not)_Advance_(1280x720_Blu-ray_FLAC)_[12DF18F3].mkv": {
-        "group": "Coalgirls",
-        "name": "Evangelion 2.22 You Can (Not) Advance",
-        "resolution": "1280x720",
-        "audio": "flac",
-        "source": "blu-ray",
-        "crc32": "12df18f3",
-        "container": "mkv",
-        "should_fail": true,
-        "comment": "This is very difficult to fix or I need to rewrite ALL the logic."
-    },
-    "[Cthune] Rolling Girls - 09 [720p H264 AAC][EBDE8F5B].mkv": {
-        "group": "Cthune",
-        "name": "Rolling Girls",
-        "ep": [9],
-        "resolution": "720p",
-        "video": "h264",
-        "audio": "aac",
-        "crc32": "ebde8f5b"
-    },
-    "[Cthune] Rolling Girls - Batch 09-40 [720p H264 AAC][EBDE8F5B].mkv": {
-        "group": "Cthune",
-        "name": "Rolling Girls",
-        "collection": [9, 40],
-        "type": "batch",
-        "resolution": "720p",
-        "video": "h264",
-        "audio": "aac",
-        "crc32": "ebde8f5b"
-    },
-    "[Cthune] Rolling Girls - Season 4 [720p H264 AAC][EBDE8F5B].mkv": {
-        "group": "Cthune",
-        "name": "Rolling Girls",
-        "season": 4,
-        "type": "season",
-        "resolution": "720p",
-        "video": "h264",
-        "audio": "aac",
-        "crc32": "ebde8f5b"
-    },
-    "[Coalgirls]_Nisekoi_01_(1920x1080_Blu-ray_FLAC)_[F68B03CD].mkv": {
-        "group": "Coalgirls",
-        "name": "Nisekoi",
-        "ep": [1],
-        "resolution": "1920x1080",
-        "source": "blu-ray",
-        "audio":"flac",
-        "crc32": "f68b03cd",
-        "container": "mkv"
-    },
-    "":{
-        "comment": "Empty titles should just result in no data"
-    },
-    "[Chihiro-Amaterasu]_Rewrite_-_Vol.01_[Blu-ray_720p_Hi10P_FLAC]": {
-        "type": "volume",
-        "group": "Chihiro-Amaterasu",
-        "name": "Rewrite",
-        "volume": 1,
-        "source": "blu-ray",
-        "resolution": "720p",
-        "video-depth": "hi10p",
-        "audio": "flac"
-    },
-    "[hi10p] We Tha Team [480p]": {
-        "type": "unknown",
-        "group": "hi10p",
-        "name": "We Tha Team",
-        "resolution": "480p",
-        "video-depth": "hi10p",
-        "comment": "TODO: decide what to do with this BS (never seen it live, but it's a nice edge case)"
-    },
-    "[m.3.3.w] Hanasakeru Seishounen 12.5 (XviD) [89BACFB9].avi": {
-        "type": "ep",
-        "ep": [12.5],
-        "group": "m.3.3.w",
-        "crc32": "89bacfb9"
-    },
-    "[HorribleSubs] Re Zero kara Hajimeru Isekai Seikatsu - 01A [1080p].mkv": {
-        "type": "ep",
-        "name": "Re Zero kara Hajimeru Isekai Seikatsu",
-        "ep": [1, "A"],
-        "group": "HorribleSubs",
-        "resolution": "1080p"
-    },
-    "[NyaaTorrents] LOVE HINA VOL 5 [DVD-ISO]": {
-        "type": "volume",
-        "name": "LOVE HINA",
-        "volume": 5,
-        "source": "dvd-iso"
-    },
-    "[Jumonji-Giri]_[F-B&A-E]_W_Wish_Ep01_(0c29b4a5).mkv": {
-        "type": "ep",
-        "ep": [1],
-        "name": "W Wish",
-        "crc32": "0c29b4a5",
-        "container": "mkv"
-    },
-    "[BakedFish] Hagane Orchestra - 01 - 12 - Batch [720p][MP4][AAC]": {
-        "type": "batch",
-        "collection": [1, 12],
-        "resolution": "720p",
-        "container": "mp4",
-        "audio": "aac",
-        "name": "Hagane Orchestra",
-        "group": "BakedFish",
-        "should_fail": true,
-        "comment": "TODO"
-    },
-    "[Coalgirls]_Katanagatari_(1280x720_Blu-Ray_FLAC)": {
-        "type": "batch",
-        "resolution": "1280x720",
-        "audio": "flac",
-        "group": "Coalgirls",
-        "name": "Katanagatari"
-    },
-    "[Erai-raws] Tsurezure Children - 12 END [1080p][Multiple Subtitle][892E3258].mkv": {
-        "type": "ep",
-        "resolution": "1080p",
-        "unparsed": ["Multiple Subtitle"],
-        "group": "Erai-raws",
-        "name": "Tsurezure Children",
-        "ep": [12]
-    }
+  "[HorribleSubs] Show By Rock!! S2 - 07 [720p].mkv": {
+    "group": "HorribleSubs",
+    "name": "Show By Rock!! S2",
+    "resolution": "720p",
+    "ep": [7.0],
+    "type": "ep",
+    "container": "mkv"
+  },
+  "Kabaneri of the Iron Fortress (1080p)": {
+    "resolution": "1080p",
+    "name": "Kabaneri of the Iron Fortress"
+  },
+  "[Project Marego] Chocolat no Mahou 1-2 Eng sub [480p]": {
+    "name": "Chocolat no Mahou",
+    "collection": [[1.0],[2.0]],
+    "resolution": "480p",
+    "group": "Project Marego",
+    "comment": "details outside tags and random numbers which I don't even know the meaning of...",
+    "should_fail": true
+  },
+  "[project-gxs] Kara no Kyoukai - The Garden of Sinners v2 [10bit BD 1080p]": {
+    "group": "project-gxs",
+    "name": "Kara no Kyoukai - The Garden of Sinners",
+    "source": "bd",
+    "video-depth": "10bit",
+    "version": 2
+  },
+  "[Thunder] Hellsing Ultimate 06 - 10 [720p] [Dual Audio]": {
+    "group": "Thunder",
+    "collection": [[6.0],[10.0]],
+    "resolution": "720p",
+    "name": "Hellsing Ultimate",
+    "comment": "Titles like these are just unparsable, is this Hellsing Ultimate 06 EP 10? or a collection of Hellsing Ultimate EPs 06-10, this one is pretty obvious but since we don't have extra data about titles we just ignore it",
+    "should_fail": true
+  },
+  "[DeadFish] Psycho-Pass 2 - 11 [720p][AAC].mp4": {
+    "group": "DeadFish",
+    "ep": [11.0],
+    "name": "Psycho-Pass 2",
+    "resolution": "720p",
+    "audio": "aac",
+    "container": "mp4"
+  },
+  "[HorribleSubs] ReLIFE (01-13) [1080p] (Batch)": {
+    "group": "HorribleSubs",
+    "collection": [[1.0],[13.0]],
+    "type": "batch",
+    "resolution": "1080p",
+    "name": "ReLIFE"
+  },
+  "[FFF] DATE A LIVE [BD][1080p-FLAC]": {
+    "group": "FFF",
+    "source": "bd",
+    "resolution": "1080p",
+    "audio": "flac"
+  },
+  "[DeadFish] Ano Natsu de Matteru: Bokutachi wa Koukou Saigo no Natsu wo Sugoshinagara - Special [BD][1080p][AAC].mp4": {
+    "group": "DeadFish",
+    "source": "bd",
+    "resolution": "1080p",
+    "audio": "aac",
+    "container": "mp4",
+    "name": "Ano Natsu de Matteru: Bokutachi wa Koukou Saigo no Natsu wo Sugoshinagara",
+    "type": "special"
+  },
+  "[JacobSwaggedUp] Ore no Imouto ga Konna ni Kawaii Wake ga Nai [Season 1] (BD 1280x720)": {
+    "group": "JacobSwaggedUp",
+    "source": "bd",
+    "resolution": "1280x720",
+    "name": "Ore no Imouto ga Konna ni Kawaii Wake ga Nai",
+    "comment": "TODO: decide what to do with a tag like [Season 1]"
+  },
+  "[Coalgirls]_Evangelion_2.22_You_Can_(Not)_Advance_(1280x720_Blu-ray_FLAC)_[12DF18F3].mkv": {
+    "group": "Coalgirls",
+    "name": "Evangelion 2.22 You Can (Not) Advance",
+    "resolution": "1280x720",
+    "audio": "flac",
+    "source": "blu-ray",
+    "crc32": "12df18f3",
+    "container": "mkv",
+    "should_fail": true,
+    "comment": "This is very difficult to fix or I need to rewrite ALL the logic."
+  },
+  "[Cthune] Rolling Girls - 09 [720p H264 AAC][EBDE8F5B].mkv": {
+    "group": "Cthune",
+    "name": "Rolling Girls",
+    "ep": [9.0],
+    "resolution": "720p",
+    "video": "h264",
+    "audio": "aac",
+    "crc32": "ebde8f5b"
+  },
+  "[Cthune] Rolling Girls - Batch 09-40 [720p H264 AAC][EBDE8F5B].mkv": {
+    "group": "Cthune",
+    "name": "Rolling Girls",
+    "collection": [[9.0],[40.0]],
+    "type": "batch",
+    "resolution": "720p",
+    "video": "h264",
+    "audio": "aac",
+    "crc32": "ebde8f5b"
+  },
+  "[Cthune] Rolling Girls - Season 4 [720p H264 AAC][EBDE8F5B].mkv": {
+    "group": "Cthune",
+    "name": "Rolling Girls",
+    "season": 4,
+    "type": "season",
+    "resolution": "720p",
+    "video": "h264",
+    "audio": "aac",
+    "crc32": "ebde8f5b"
+  },
+  "[Coalgirls]_Nisekoi_01_(1920x1080_Blu-ray_FLAC)_[F68B03CD].mkv": {
+    "group": "Coalgirls",
+    "name": "Nisekoi",
+    "ep": [1.0],
+    "resolution": "1920x1080",
+    "source": "blu-ray",
+    "audio": "flac",
+    "crc32": "f68b03cd",
+    "container": "mkv"
+  },
+  "[Chihiro-Amaterasu]_Rewrite_-_Vol.01_[Blu-ray_720p_Hi10P_FLAC]": {
+    "type": "volume",
+    "group": "Chihiro-Amaterasu",
+    "name": "Rewrite",
+    "volume": 1,
+    "source": "blu-ray",
+    "resolution": "720p",
+    "video-depth": "hi10p",
+    "audio": "flac"
+  },
+  "[hi10p] We Tha Team [480p]": {
+    "type": "unknown",
+    "group": "hi10p",
+    "name": "We Tha Team",
+    "resolution": "480p",
+    "video-depth": "hi10p",
+    "comment": "TODO: decide what to do with this BS (never seen it live, but it's a nice edge case)"
+  },
+  "[m.3.3.w] Hanasakeru Seishounen 12.5 (XviD) [89BACFB9].avi": {
+    "type": "ep",
+    "ep": [12.5],
+    "group": "m.3.3.w",
+    "crc32": "89bacfb9"
+  },
+  "[HorribleSubs] Re Zero kara Hajimeru Isekai Seikatsu - 01A [1080p].mkv": {
+    "type": "ep",
+    "name": "Re Zero kara Hajimeru Isekai Seikatsu",
+    "ep": [1.0,"A"],
+    "group": "HorribleSubs",
+    "resolution": "1080p"
+  },
+  "[NyaaTorrents] LOVE HINA VOL 5 [DVD-ISO]": {
+    "type": "volume",
+    "name": "LOVE HINA",
+    "volume": 5,
+    "source": "dvd-iso"
+  },
+  "[Jumonji-Giri]_[F-B&A-E]_W_Wish_Ep01_(0c29b4a5).mkv": {
+    "type": "ep",
+    "ep": [1.0],
+    "name": "W Wish",
+    "crc32": "0c29b4a5",
+    "container": "mkv"
+  },
+  "[BakedFish] Hagane Orchestra - 01 - 12 - Batch [720p][MP4][AAC]": {
+    "type": "batch",
+    "collection": [[1.0],[12.0]],
+    "resolution": "720p",
+    "container": "mp4",
+    "audio": "aac",
+    "name": "Hagane Orchestra",
+    "group": "BakedFish"
+  },
+  "[Coalgirls]_Katanagatari_(1280x720_Blu-Ray_FLAC)": {
+    "type": "batch",
+    "resolution": "1280x720",
+    "audio": "flac",
+    "group": "Coalgirls",
+    "name": "Katanagatari"
+  },
+  "[Erai-raws] Tsurezure Children - 12 END [1080p][Multiple Subtitle][892E3258].mkv": {
+    "type": "ep",
+    "resolution": "1080p",
+    "unparsed": [
+      "Multiple Subtitle"
+    ],
+    "group": "Erai-raws",
+    "name": "Tsurezure Children",
+    "ep": [12.0]
+  },
+  "[HorribleSubs] Granblue Fantasy The Animation S2 - 13 [720p].mkv": {
+    "ep": [13.0],
+    "type": "ep",
+    "resolution": "720p",
+    "group": "HorribleSubs",
+    "name": "Granblue Fantasy The Animation S2"
+  },
+  "[HorribleSubs] Shokugeki no Soma S3 - 01 - 21 [1080p]": {
+    "collection": [[1.0],[21.0]],
+    "type": "collection",
+    "resolution": "1080p",
+    "group": "HorribleSubs",
+    "name": "Shokugeki no Soma S3"
+  }
 }

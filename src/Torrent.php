@@ -4,6 +4,8 @@
 namespace Odango\Atama;
 
 
+use function foo\func;
+
 class Torrent
 {
     protected $id;
@@ -64,7 +66,9 @@ class Torrent
             case 'volume':
                 return $this->getMetadata()['volume'];
             case 'collection':
-                return implode('-', $this->getMetadata()['collection']);
+                return implode('-', array_map(function ($item) {
+                    return implode(',', $item);
+                }, $this->getMetadata()['collection']));
             case 'ep':
                 return implode(',', $this->getMetadata()['ep']);
             case 'special':
