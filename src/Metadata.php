@@ -21,7 +21,7 @@ class Metadata extends \ArrayObject
     // Matches group and spacer (' ' or '_')
     const GROUP_AND_SPACER_MATCHER = '~^(?:\[([^\]]+)\]|\(([^\)]+)\)|(.+) >> )([_ ])?~';
     // Matches the name of a title
-    const NAME_MATCHER = '~(?:(?:\[([^\]]+)\]|\(([^\)]+)\))(?:(?:[_ ]\[(?:[^\]]+)\]|\((?:[^\)]+)\)))*|(.+) >>)?((?:(?!\[[^\]+]\]|Ep[0-9]| [-\~] (?:[0-9]|season|vol|batch|special|o[nv]a)|( (Vol\.? ?)?[0-9]*(-[0-9]+)?(v[0-9]+)? ?)?(\(|\[|\.[a-z0-9]+$)).)+)~i';
+    const NAME_MATCHER = '~(?:(?:\[([^\]]+)\]|\(([^\)]+)\))(?:(?:[_ ]\[(?:[^\]]+)\]|\((?:[^\)]+)\)))*|(.+) >>)?((?:(?!\[[^\]+]\]|Ep[0-9]| [-\~] (?:[0-9]|season|vol|batch|special|o[nv]a)|( (Vol\.? ?[0-9])?(\s*-\s*[0-9]+|[0-9]{2,})?(v[0-9]+)? ?)?(\(|\[|\.[a-z0-9]+$)).)+)~i';
     // Matches tags in the title e.g. [MP3] or (MP4)
     const TAG_MATCHER = '~(?:\[([^\]]+)\]|\(([^\)]+)\))~';
     // Matches the extension of a torrent e.g. .mkv or .mp4

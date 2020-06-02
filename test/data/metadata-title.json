@@ -211,5 +211,35 @@
     "type": "collection",
     "source": "dvd-rip",
     "video": "h264"
+  },
+  "[SallySubs] Log Horizon 2 [BD 1080p FLAC]": {
+    "source": "bd",
+    "resolution": "1080p",
+    "audio": "flac",
+    "name": "Log Horizon 2"
+  },
+  "[EveTaku] Nisekoi 01v2 [720p-Hi10P] [B63D4DBE].mkv": {
+    "resolution": "720p",
+    "video-depth": "hi10p",
+    "crc32": "b63d4dbe",
+    "group": "EveTaku",
+    "name": "Nisekoi",
+    "ep": [1.0],
+    "version": 2
+  },
+  "[Arukoru] A Certain Magical Index the Movie - The Miracle of Endymion (Gekijouban Toaru Majutsu no Index - Endymion no Kiseki) [1080p x265 10bit BD Dual Audio AAC]": {
+    "resolution": "1080p",
+    "video": "x265",
+    "video-depth": "10bit",
+    "source": "bd",
+    "audio": "aac",
+    "group": "Arukoru",
+    "name": "A Certain Magical Index the Movie - The Miracle of Endymion"
+  },
+  "[Erai-raws] Shokugeki no Souma - Shin no Sara - 08 [1080p][Multiple Subtitle].mkv": {
+    "resolution": "1080p",
+    "group": "Erai-raws",
+    "name": "Shokugeki no Souma - Shin no Sara",
+    "container": "mkv"
   }
 }
