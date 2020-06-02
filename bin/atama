@@ -20,6 +20,11 @@ foreach ($md as $key => $value) {
     echo "{$key}=";
 
     if (is_array($value)) {
+	if (is_array($value[0])) {
+            $value = array_map(function ($a) {
+	        return "[" . implode(",", $a) . "]";
+	    }, $value);
+	}
         echo implode(",", $value);
     } else {
         echo $value;
