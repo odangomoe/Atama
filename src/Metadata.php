@@ -96,11 +96,9 @@ class Metadata extends \ArrayObject
 
     private function normalizeTitle($title)
     {
-        if ( ! preg_match(static::GROUP_AND_SPACER_MATCHER, $title, $match)) {
-            return $title;
-        }
+        preg_match(static::GROUP_AND_SPACER_MATCHER, $title, $match);
 
-        if (isset($match[4]) && $match[4] === '_') {
+        if ((isset($match[4]) && $match[4] === '_') || substr_count($title, ' ') === 0) {
             return str_replace('_', ' ', $title);
         }
 
@@ -317,7 +315,7 @@ class Metadata extends \ArrayObject
             }
 
             if (count($parts) === 2) {
-                $info['type']       = empty($match[16]) ? 'collection' : 'batch';
+                $info['type'] = empty($match[16]) ? 'collection' : 'batch';
 
                 $info['collection'] = [$this->parseEpInfo($parts[0]), $this->parseEpInfo($parts[1])];
             } else {

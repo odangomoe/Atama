@@ -143,7 +143,8 @@
     "type": "ep",
     "ep": [12.5],
     "group": "m.3.3.w",
-    "crc32": "89bacfb9"
+    "crc32": "89bacfb9",
+    "video": "xvid"
   },
   "[HorribleSubs] Re Zero kara Hajimeru Isekai Seikatsu - 01A [1080p].mkv": {
     "type": "ep",
@@ -204,5 +205,11 @@
     "resolution": "1080p",
     "group": "HorribleSubs",
     "name": "Shokugeki no Soma S3"
+  },
+  "Sunabouzu_1-24_[砂ぼうず]_[Desert_Punk]_[moo-shi_eng_softsub][jap_audio][DVD-Rip][H264]": {
+    "collection": [[1.0],[24.0]],
+    "type": "collection",
+    "source": "dvd-rip",
+    "video": "h264"
   }
 }
