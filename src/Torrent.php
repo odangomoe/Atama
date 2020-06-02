@@ -3,9 +3,6 @@
 
 namespace Odango\Atama;
 
-
-use function foo\func;
-
 class Torrent
 {
     protected $id;
@@ -74,7 +71,7 @@ class Torrent
             case 'special':
             case 'ova':
             case 'ona':
-                return $this->getId() ?? rand(0, 9999);
+                return $this->getId() ?? crc32($this->getMetadata()['name'] . implode(",", $this->getMetadata()['unparsed'] ?? []));
             default:
                 return 0;
         }

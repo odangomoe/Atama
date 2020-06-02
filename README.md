@@ -4,7 +4,7 @@
 
 Anime torrent title parsing and archiving
 
-This package it's only use is to parse anime torrent titles and archive them into TorrentSets
+This package's only use is to parse anime torrent titles and archive them into TorrentSets
 
 ### Install
 
@@ -22,11 +22,22 @@ $md = Metadata::createFromTitle("[HorribleSubs] Show By Rock!! S2 - 07 [720p].mk
 echo $md["name"]; // Show By Rock!! S2
 echo $md["group"]; // HorribleSubs
 echo $md["type"]; // ep
-echo $md["ep"]; // 7
+echo $md["ep"]; // [7.0]
 echo $md["resolution"]; // 720p
 ```
 
-The `Metadata` object is an `ArrayObject` and doesn't define any functions except it's constuctors
+See [metadate-title.json](test/data/metadata-title.json) for more info.
+
+EP's are represented by an array with floats and/or letters (thank Re:Zero for that):
+
+```php
+$md = Metadata::createFromTitle("[HorribleSubs] Re Zero kara Hajimeru Isekai Seikatsu - 01A [1080p].mkv");
+$md["ep"]; // [1.0, "A"]
+$md = Metadata::createFromTitle("[m.3.3.w] Hanasakeru Seishounen 12.5 (XviD) [89BACFB9].avi");
+$md["ep"]; // [12.5]
+```
+
+The `Metadata` object is an `ArrayObject` and doesn't define any functions except it's constructors
 
 ### `Metadata::createFromTitle($title): Metadata`
 
@@ -75,6 +86,10 @@ Gets a `Metadata` object with the `Metadata` all torrents in the set have in com
 ## Torrent
 
 The `Torrent` object is pretty much made only to be extended and add more info about it, the current implementation just provides enough information to be used
+
+### `Torrent->setTitle(string $title): void`
+
+Set the title of this torrent and update metadata accordingly
 
 ### `Torrent->getTitle(): string`
 

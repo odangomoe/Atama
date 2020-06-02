@@ -260,5 +260,12 @@
     "name": "Shingeki no Kyojin Season 3 Part 2",
     "group": "AnimeRG",
     "comment": "idk if I want to support this"
+  },
+  "[Commie] Ghost in the Shell SAC_2045 - 07 [8546A50A].mkv": {
+    "name": "Ghost in the Shell SAC_2045",
+    "ep": [7.0],
+    "crc32": "8546a50a",
+    "container": "mkv",
+    "group": "Commie"
   }
 }
