@@ -11,9 +11,20 @@ class Metadata extends \ArrayObject
             "resolution"  => ['/^[0-9]+p$/i', '/^[0-9]+x[0-9]+$/i', '720', '1080', '420'],
             "source"      => ['/^dvd(?:-?(?:rip|iso))?$/i', '/^bd(?:-?(?:rip|iso))?$/i', '/^blu-?ray$/i'],
             "audio"       => ['/^aac(-ac3)?$/i', 'mp3', '/^flac(-ac3)?$/i'],
-            "video"       => ['x264', 'x265', 'avc', 'hevc', '/^h\.?264/i', '/^h\.?265/i', 'xvid', 'divx'],
+            "video"       => [
+                'x264',
+                'x265',
+                'avc',
+                'hevc',
+                '/^h\.?264/i',
+                '/^h\.?265/i',
+                'xvid',
+                'divx',
+                'vp8',
+                'vp9',
+            ],
             "video-depth" => ['/^10-?b(it)?$/i', '/^8-?b(it)?$/i', 'hi10p'],
-            "container"   => ['mp4', 'mkv', 'avi'],
+            "container"   => ['mp4', 'mkv', 'avi', 'webm', 'ogv'],
             "crc32"       => ['/^[a-f0-9]{8}$/i'],
             "type"        => ['batch', 'ova', 'special', 'ona'],
         ];
@@ -21,13 +32,13 @@ class Metadata extends \ArrayObject
     // Matches group and spacer (' ' or '_')
     const GROUP_AND_SPACER_MATCHER = '~^(?:\[([^\]]+)\]|\(([^\)]+)\)|(.+) >> )([_ ])?~';
     // Matches the name of a title
-    const NAME_MATCHER = '~(?:(?:\[([^\]]+)\]|\(([^\)]+)\))(?:(?:[_ ]\[(?:[^\]]+)\]|\((?:[^\)]+)\)))*|(.+) >>)?((?:(?!\[[^\]+]\]|Ep[0-9]| [-\~] (?:[0-9]|season|vol|batch|special|o[nv]a)|( (Vol\.? ?[0-9])?(\s*-\s*[0-9]+|[0-9]{2,})?(v[0-9]+)? ?)?(\(|\[|\.[a-z0-9]+$)).)+)~i';
+    const NAME_MATCHER = '~(?:(?:\[([^\]]+)\]|\(([^\)]+)\))(?:(?:[_ ]\[(?:[^\]]+)\]|\((?:[^\)]+)\)))*|(.+) >>)?((?:(?!\[[^\]+]\]|ep(isode )?[0-9]| [-\~] (?:[0-9]|season|vol|batch|special|o[nv]a)|( (Vol(ume)?\.? ?[0-9])?(\s*-\s*[0-9]+|[0-9]{2,})?(v[0-9]+)? ?)?(\(|\[|\.[a-z0-9]+$)).)+)~i';
     // Matches tags in the title e.g. [MP3] or (MP4)
     const TAG_MATCHER = '~(?:\[([^\]]+)\]|\(([^\)]+)\))~';
     // Matches the extension of a torrent e.g. .mkv or .mp4
     const EXTENSION_MATCHER = '~\.([a-z0-9]+)$~i';
     // Matches info like which EP, batch or Volume this is
-    const TYPE_INFO_MATCHER = '~(?: (?:(Vol\.? ?([0-9]+) (?:End)?)|(?:ep)?([0-9]+(?:\.[0-9]+|[A-Z]+)?)|(batch(?: ([0-9]+(?:\.[0-9]+|[A-Z]+)?)-([0-9]+(?:\.[0-9]+|[A-Z]+)?))?|o[vn]a|special)|(([0-9]+(?:\.[0-9]+|[A-Z]+)?)-([0-9]+(?:\.[0-9]+|[A-Z]+)?))(?: complete)?|((s|season )([0-9]+)))|( ?v([0-9]+))|((?:\s+[0-9]+(?:\.[0-9]+|[A-Z]+)?)(?:\s+-\s+(?:[0-9]+(?:\.[0-9]+|[A-Z]+)?)+))(?:\s+-\s+(batch))?)+ ?(?:END ?)?(?:\[|\()~i';
+    const TYPE_INFO_MATCHER = '~(?: (?:(Vol(?:ume)?\.? ?([0-9]+) (?:End)?)|(?:ep)?([0-9]+(?:\.[0-9]+|[A-Z]+)?)|(batch(?: ([0-9]+(?:\.[0-9]+|[A-Z]+)?)-([0-9]+(?:\.[0-9]+|[A-Z]+)?))?|o[vn]a|special)|(([0-9]+(?:\.[0-9]+|[A-Z]+)?)-([0-9]+(?:\.[0-9]+|[A-Z]+)?))(?: complete)?|((s|season )([0-9]+)))|( ?v([0-9]+))|((?:\s+[0-9]+(?:\.[0-9]+|[A-Z]+)?)(?:\s+-\s+(?:[0-9]+(?:\.[0-9]+|[A-Z]+)?)+))(?:\s+-\s+(batch))?)+ ?(?:END ?)?(?:\[|\()~i';
     // Matches a range for a collection e.g. 10 - 23
     const COLLECTION_RANGE_MATCHER = '~([0-9]+(?:\.[0-9]+)?) ?- ?([0-9]+(?:\.[0-9]+)?)~';
     // Matches the EP with part

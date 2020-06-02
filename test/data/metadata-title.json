@@ -241,5 +241,24 @@
     "group": "Erai-raws",
     "name": "Shokugeki no Souma - Shin no Sara",
     "container": "mkv"
+  },
+  "[Licca] Little Women II - Jo's Boys Episode 4 (VP8)": {
+    "video": "vp8",
+    "name": "Little Women II - Jo's Boys",
+    "ep": [4.0],
+    "group": "Licca"
+  },
+  "Black Bullet Volume 3 [BD][x264,720p,AAC][10Bit][DarkHollow]": {
+    "video": "x264",
+    "name": "Black Bullet",
+    "volume": 3,
+    "resolution": "720p",
+    "audio": "aac",
+    "video-depth": "10bit"
+  },
+  "[AnimeRG] Shingeki no Kyojin Season 3 Part 2 (01-10) (2019) (Complete) [1080p] [JRR] [Attack on Titan 50-59]": {
+    "name": "Shingeki no Kyojin Season 3 Part 2",
+    "group": "AnimeRG",
+    "comment": "idk if I want to support this"
   }
 }
