@@ -1,27 +1,33 @@
 {
-    "name": "odango/atama",
-    "description": "The brain behind Odango.moe",
-    "type": "library",
-    "require-dev": {
-        "phpunit/phpunit": "^9.1.5",
-        "mockery/mockery": "^0.9.5",
-        "php": "^7.3",
-        "php-coveralls/php-coveralls": "^1.0"
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "eater",
-            "email": "hello@eaterofco.de"
-        }
-    ],
-    "minimum-stability": "stable",
-    "require": {},
-    "autoload": {
-        "psr-4": {
-            "Odango\\Atama\\": "src/",
-            "Odango\\Atama\\Test\\": "test/"
-        }
-    },
-    "bin": ["bin/atama"]
+  "name": "odango/atama",
+  "description": "The brain behind Odango.moe",
+  "type": "library",
+  "require-dev": {
+    "phpunit/phpunit": "^9.1.5",
+    "mockery/mockery": "^0.9.5",
+    "php": "^7.3",
+    "php-coveralls/php-coveralls": "^1.0"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "eater",
+      "email": "hello@eaterofco.de"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Odango\\Atama\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Odango\\Atama\\Test\\": "test/"
+    }
+  },
+  "bin": [
+    "bin/atama"
+  ]
 }
