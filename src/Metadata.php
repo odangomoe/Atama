@@ -38,9 +38,9 @@ class Metadata extends \ArrayObject
     // Matches the extension of a torrent e.g. .mkv or .mp4
     const EXTENSION_MATCHER = '~\.([a-z0-9]+)$~i';
     // Matches info like which EP, batch or Volume this is
-    const TYPE_INFO_MATCHER = '~(?: (?:(Vol(?:ume)?\.? ?([0-9]+) (?:End)?)|(?:ep)?([0-9]+(?:\.[0-9]+|[A-Z]+)?)|(batch(?: ([0-9]+(?:\.[0-9]+|[A-Z]+)?)-([0-9]+(?:\.[0-9]+|[A-Z]+)?))?|o[vn]a|special)|(([0-9]+(?:\.[0-9]+|[A-Z]+)?)-([0-9]+(?:\.[0-9]+|[A-Z]+)?))(?: complete)?|((s|season )([0-9]+)))|( ?v([0-9]+))|((?:\s+[0-9]+(?:\.[0-9]+|[A-Z]+)?)(?:\s+-\s+(?:[0-9]+(?:\.[0-9]+|[A-Z]+)?)+))(?:\s+-\s+(batch))?)+ ?(?:END ?)?(?:\[|\()~i';
+    const TYPE_INFO_MATCHER = '~(?: (?:(Vol(?:ume)?\.? ?([0-9]+) (?:End)?)|(?:ep)?([0-9]+(?:\.[0-9]+|[A-Z]+)?)|(batch(?: ([0-9]+(?:\.[0-9]+|[A-Z]+)?)-([0-9]+(?:\.[0-9]+|[A-Z]+)?))?|o[vn]a|special)|(([0-9]+(?:\.[0-9]+|[A-Z]+)?)-([0-9]+(?:\.[0-9]+|[A-Z]+)?))(?: complete)?|((s|season )([0-9]+)))|( ?v([0-9]+))|((?:\s+[0-9]+(?:\.[0-9]+|[A-Z]+)?)(?:\s+[-\~]\s+(?:[0-9]+(?:\.[0-9]+|[A-Z]+)?)+))(?:\s+-\s+(batch))?)+ ?(?:END ?)?(?:\[|\()~i';
     // Matches a range for a collection e.g. 10 - 23
-    const COLLECTION_RANGE_MATCHER = '~([0-9]+(?:\.[0-9]+)?) ?- ?([0-9]+(?:\.[0-9]+)?)~';
+    const COLLECTION_RANGE_MATCHER = '~([0-9]+(?:\.[0-9]+)?) ?[-\~] ?([0-9]+(?:\.[0-9]+)?)~';
     // Matches the EP with part
     const EP_MATCHER = '~^([0-9]+(?:\.[0-9]+)?)([a-z]+)?$~i';
 
@@ -313,7 +313,7 @@ class Metadata extends \ArrayObject
             $info['type']   = 'season';
             $info['season'] = intval($match[12]);
         } elseif ( ! empty($match[15])) {
-            $parts      = preg_split('~\s*(\s+|-)\s*~', trim($match[15], ' -'));
+            $parts      = preg_split('~\s*(\s+|[-\~])\s*~', trim($match[15], ' -'));
             $namesParts = explode(' ', $this['name']);
             $item       = end($namesParts);
 

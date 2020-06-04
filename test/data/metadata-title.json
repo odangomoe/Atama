@@ -267,5 +267,12 @@
     "crc32": "8546a50a",
     "container": "mkv",
     "group": "Commie"
+  },
+  "[Erai-raws] Sword Art Online Alternative - Gun Gale Online - 01 ~ 12 [1080p][Multiple Subtitle]": {
+    "name": "Sword Art Online Alternative - Gun Gale Online",
+    "type": "collection",
+    "collection": [[1.0], [12.0]],
+    "group": "Erai-raws",
+    "resolution": "1080p"
   }
 }
