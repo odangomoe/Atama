@@ -63,7 +63,11 @@ class Metadata extends \ArrayObject
 
         $normalizedTitle = $md->normalizeTitle($title);
         $md['group']     = $md->parseGroupFromTitle($normalizedTitle);
-        $md['name']      = $md->parseNameFromTitle($normalizedTitle);
+	$name = $md->parseNameFromTitle($normalizedTitle);
+	$names = preg_split("/\\s+[\\|\\/]\\s+/", $name);
+	$md['name'] = array_shift($names);
+	$md['alternative-names'] = $names;
+
         $md->mergeIntoSelf($md->parseTagsFromTitle($normalizedTitle));
         $md->mergeIntoSelf($md->parseTypeInfoFromTitle($normalizedTitle));
         $md['container'] = $md->parseContainerFromTitle($normalizedTitle);
@@ -239,7 +243,7 @@ class Metadata extends \ArrayObject
                 $result += $try;
             }
 
-            if ($failCount > 2) {
+            if ($failCount > 3) {
                 return false;
             }
         }
