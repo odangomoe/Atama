@@ -288,5 +288,14 @@
     "group": "Cleo",
     "video-depth": "10bit",
     "video": "hevc"
+  },
+  "[Watashi]_Yozakura_Quartet _-_Tsuki_ni_Naku_03_[576p][134953CC].mkv": {
+    "name": "Yozakura Quartet - Tsuki ni Naku",
+    "group": "Watashi",
+    "resolution": "576p",
+    "crc32": "134953cc",
+    "container": "mkv",
+    "type": "ep",
+    "ep": [3.0]
   }
 }

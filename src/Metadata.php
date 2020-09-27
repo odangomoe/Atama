@@ -114,8 +114,10 @@ class Metadata extends \ArrayObject
         preg_match(static::GROUP_AND_SPACER_MATCHER, $title, $match);
 
         if ((isset($match[4]) && $match[4] === '_') || substr_count($title, ' ') === 0) {
-            return str_replace('_', ' ', $title);
-        }
+            $title = str_replace('_', ' ', $title);
+	}
+
+	$title = preg_replace('/\s+/', ' ', $title);
 
         return $title;
     }
