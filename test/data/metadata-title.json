@@ -297,5 +297,13 @@
     "container": "mkv",
     "type": "ep",
     "ep": [3.0]
+  },
+  "[inid4c] JoJo's Bizarre Adventure - Stone Ocean WEB 01-12 (1080p)": {
+    "name": "JoJo's Bizarre Adventure - Stone Ocean",
+    "group": "inid4c",
+    "resolution": "1080p",
+    "type": "collection",
+    "collection": [[1.0],[12.0]],
+    "source": "web"
   }
 }
