@@ -325,5 +325,13 @@
     "type": "ep",
     "video": "hevc",
     "group": "EMBER"
+  },
+  "[inid4c] JoJo's Bizarre Adventure - Stone Ocean 38 v2 (1080p)": {
+    "name": "JoJo's Bizarre Adventure - Stone Ocean",
+    "group": "inid4c",
+    "resolution": "1080p",
+    "type": "ep",
+    "ep": [38.0],
+    "version": 2
   }
 }
